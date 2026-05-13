@@ -1,0 +1,19 @@
+[project]
+name = "zomato-ai-recommendation"
+version = "0.1.0"
+description = "AI-Powered Restaurant Recommendations"
+requires-python = ">=3.10"
+dependencies = [
+    "fastapi>=0.100",
+    "uvicorn>=0.20",
+    "pydantic>=2.0",
+    "groq>=0.4.0",
+    "datasets>=2.10.0"
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project.optional-dependencies]
+streamlit = ["streamlit>=1.30.0"]

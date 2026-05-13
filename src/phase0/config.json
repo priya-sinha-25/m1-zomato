@@ -1,0 +1,25 @@
+{
+  "defaults": {
+    "top_n": 5,
+    "max_top_n": 20,
+    "pre_llm_top_k": 25,
+    "min_rating_default": 3.5,
+    "prompt_version": "v1.0.0"
+  },
+  "allowed_budget_buckets": [
+    "low",
+    "medium",
+    "high"
+  ],
+  "validation_rules": {
+    "rating_range": {
+      "min": 0,
+      "max": 5
+    },
+    "top_n_range": {
+      "min": 1,
+      "max": 20
+    }
+  }
+}
+

@@ -1,0 +1,6 @@
+{
+  "location": "bellandur",
+  "budget_bucket": "high",
+  "min_rating": 4.0,
+  "top_k": 5
+}

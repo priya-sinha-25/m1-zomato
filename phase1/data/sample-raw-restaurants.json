@@ -1,0 +1,38 @@
+[
+  {
+    "id": "1001",
+    "restaurant_name": "Spice Route",
+    "city": "Bengaluru",
+    "cuisines": "North Indian, Chinese",
+    "average_cost_for_two": "900",
+    "aggregate_rating": "4.3",
+    "features": "Family Friendly, Quick Service"
+  },
+  {
+    "id": "1002",
+    "restaurant_name": "Pasta Street",
+    "city": "Delhi",
+    "cuisine": "Italian",
+    "average_cost_for_two": "1400",
+    "aggregate_rating": "4.6",
+    "tags": "Cozy, Date Night"
+  },
+  {
+    "id": "1003",
+    "restaurant_name": "Budget Bites",
+    "city": "New Delhi",
+    "cuisines": "Street Food",
+    "average_cost_for_two": "350",
+    "aggregate_rating": "3.8",
+    "highlights": "Quick Service"
+  },
+  {
+    "id": "1004",
+    "restaurant_name": "Incomplete Row",
+    "city": "Delhi",
+    "cuisines": "",
+    "average_cost_for_two": "",
+    "aggregate_rating": "-"
+  }
+]
+

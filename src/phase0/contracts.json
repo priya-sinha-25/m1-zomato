@@ -1,0 +1,193 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/schemas/phase0.contracts.json",
+  "title": "Phase 0 Contracts",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "restaurantRecordSchema",
+    "recommendationResponseSchema",
+    "runtimeBoundaries"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$"
+    },
+    "restaurantRecordSchema": {
+      "$ref": "#/$defs/restaurantRecord"
+    },
+    "recommendationResponseSchema": {
+      "$ref": "#/$defs/recommendationResponse"
+    },
+    "runtimeBoundaries": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "datasetScriptOutputs",
+        "apiServiceInputs",
+        "apiServiceOutputs"
+      ],
+      "properties": {
+        "datasetScriptOutputs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1
+        },
+        "apiServiceInputs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1
+        },
+        "apiServiceOutputs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1
+        }
+      }
+    }
+  },
+  "$defs": {
+    "restaurantRecord": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "restaurant_id",
+        "name",
+        "location_city",
+        "cuisines",
+        "cost_for_two",
+        "cost_bucket",
+        "rating"
+      ],
+      "properties": {
+        "restaurant_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "location_city": {
+          "type": "string",
+          "minLength": 1
+        },
+        "cuisines": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1
+        },
+        "cost_for_two": {
+          "type": "number",
+          "minimum": 0
+        },
+        "cost_bucket": {
+          "type": "string",
+          "enum": [
+            "low",
+            "medium",
+            "high"
+          ]
+        },
+        "rating": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 5
+        },
+        "additional_tags": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "recommendationItem": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "restaurant_id",
+        "restaurant_name",
+        "cuisine",
+        "rating",
+        "estimated_cost_for_two",
+        "explanation"
+      ],
+      "properties": {
+        "restaurant_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "restaurant_name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "cuisine": {
+          "type": "string",
+          "minLength": 1
+        },
+        "rating": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 5
+        },
+        "estimated_cost_for_two": {
+          "type": "number",
+          "minimum": 0
+        },
+        "explanation": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "recommendationResponse": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "request_id",
+        "prompt_version",
+        "top_n",
+        "recommendations"
+      ],
+      "properties": {
+        "request_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "prompt_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "top_n": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 20
+        },
+        "summary": {
+          "type": "string"
+        },
+        "recommendations": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/recommendationItem"
+          },
+          "minItems": 1
+        }
+      }
+    }
+  }
+}
+

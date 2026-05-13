@@ -1,0 +1,24 @@
+{
+  "active_version": "v1.0.0",
+  "versions": [
+    {
+      "version": "v1.0.0",
+      "status": "active",
+      "created_at_utc": "2026-04-29T00:00:00Z",
+      "purpose": "Initial ranking and explanation contract for Zomato-style recommendations.",
+      "required_output_fields": [
+        "restaurant_id",
+        "restaurant_name",
+        "cuisine",
+        "rating",
+        "estimated_cost_for_two",
+        "explanation"
+      ],
+      "notes": [
+        "Explanations must be grounded in provided candidate data.",
+        "No restaurant attributes may be invented by the model."
+      ]
+    }
+  ]
+}
+

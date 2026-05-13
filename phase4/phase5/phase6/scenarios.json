@@ -1,0 +1,35 @@
+[
+  {
+    "scenario_id": "test_bellandur_high",
+    "description": "Happy path: High budget in Bellandur with 4.0+ rating",
+    "preferences": {
+      "location": "bellandur",
+      "budget_bucket": "high",
+      "min_rating": 4.0,
+      "top_k": 5
+    },
+    "expected_status": "success"
+  },
+  {
+    "scenario_id": "test_delhi_italian",
+    "description": "Happy path: Delhi Italian",
+    "preferences": {
+      "location": "Delhi",
+      "cuisine": "Italian",
+      "top_k": 5
+    },
+    "expected_status": "success"
+  },
+  {
+    "scenario_id": "test_impossible_constraints",
+    "description": "Fallback path: Impossible constraints leading to fallback",
+    "preferences": {
+      "location": "Mumbai",
+      "cuisine": "Mexican",
+      "min_rating": 5.0,
+      "budget_bucket": "low",
+      "top_k": 5
+    },
+    "expected_status": "fallback"
+  }
+]

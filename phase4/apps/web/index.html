@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zomato AI - Premium Restaurant Recommendations</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-container">
+    <header class="hero">
+      <div class="hero-content">
+        <h1>Zomato <span class="gradient-text">AI</span></h1>
+        <p>Discover your next favorite restaurant with intelligent recommendations tailored to your taste.</p>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <section class="form-section glass-panel">
+        <form id="preferences-form">
+          <div class="form-group">
+            <label for="location">Location</label>
+            <input type="text" id="location" placeholder="e.g. Bellandur, Delhi" required>
+          </div>
+          <div class="form-group">
+            <label for="budget_bucket">Budget</label>
+            <select id="budget_bucket">
+              <option value="">Any</option>
+              <option value="low">Budget-Friendly (< ₹500)</option>
+              <option value="medium">Moderate (₹500 - ₹1500)</option>
+              <option value="high">Premium (> ₹1500)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="cuisine">Cuisine</label>
+            <input type="text" id="cuisine" placeholder="e.g. North Indian, Italian">
+          </div>
+          <div class="form-group">
+            <label for="min_rating">Minimum Rating</label>
+            <input type="number" id="min_rating" min="1" max="5" step="0.1" placeholder="e.g. 4.0">
+          </div>
+          <div class="form-group">
+            <label for="additional_preferences">Tags / Vibes</label>
+            <input type="text" id="additional_preferences" placeholder="e.g. rooftop, romantic, fast">
+          </div>
+          <button type="submit" class="submit-btn" id="submit-btn">
+            <span>Find Restaurants</span>
+            <div class="loader-spinner hidden" id="btn-loader"></div>
+          </button>
+        </form>
+      </section>
+
+      <section class="results-section">
+        <div id="status-message" class="status-message hidden"></div>
+        
+        <div class="skeleton-container hidden" id="skeleton-loader">
+          <div class="skeleton-card"></div>
+          <div class="skeleton-card"></div>
+          <div class="skeleton-card"></div>
+        </div>
+
+        <div class="recommendations-grid" id="recommendations-grid">
+          <!-- Restaurant cards will be injected here -->
+        </div>
+      </section>
+    </main>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
