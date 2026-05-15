@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: zomato-ai-api
+    env: python
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "uvicorn phase4.src.milestone1.api.main:app --host 0.0.0.0 --port $PORT"
+    envVars:
+      - key: GROQ_API_KEY
+        sync: false
