@@ -14,8 +14,8 @@ app = FastAPI(title="Zomato AI Recommendation API")
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"], # For dev only
-    allow_credentials=True,
+    allow_origins=["*"], # For production, you would ideally specify exactly ["https://your-vercel-domain.vercel.app"]
+    allow_credentials=False, # MUST be False when allow_origins is ["*"]
     allow_methods=["*"],
     allow_headers=["*"],
 )
