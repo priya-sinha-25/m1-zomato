@@ -16,7 +16,7 @@ def load_restaurants(json_path: str = None) -> List[Restaurant]:
     if not os.path.exists(json_path):
         return []
 
-    with open(json_path, "r", encoding="utf-8") as f:
+    with open(json_path, "r", encoding="utf-8-sig") as f:
         raw_data = json.load(f)
     
     results = []
