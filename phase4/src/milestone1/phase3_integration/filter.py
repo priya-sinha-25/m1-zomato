@@ -59,6 +59,10 @@ def filter_and_rank(restaurants: List[Restaurant], prefs: UserPreferences) -> Li
     # 4. Relax rating
     if not filtered:
         filtered = apply_filters(prefs.location, None, None, None, None, None)
+        
+    # 5. Relax EVERYTHING (including location) to ensure we always return something!
+    if not filtered:
+        filtered = apply_filters(None, None, None, None, None, None)
 
     filtered.sort(key=lambda x: x.rating, reverse=True)
     return filtered[:prefs.top_k]
