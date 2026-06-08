@@ -1,1 +1,50 @@
-﻿[{"restaurant_id": "1", "name": "Dummy Restaurant", "location_city": "Bellandur", "cuisines": ["Italian", "Cafe"], "cost_for_two": 1000, "cost_bucket": "medium", "rating": 4.5, "additional_tags": ["outdoor seating"]}]
+[
+  {
+    "restaurant_id": "1001",
+    "name": "Spice Route",
+    "location_city": "Bangalore",
+    "cuisines": [
+      "North Indian",
+      "Chinese"
+    ],
+    "cost_for_two": 900,
+    "cost_bucket": "medium",
+    "rating": 4.3,
+    "additional_tags": [
+      "Family Friendly",
+      "Quick Service"
+    ],
+    "searchable_text": "Spice Route Bangalore North Indian Chinese Family Friendly Quick Service"
+  },
+  {
+    "restaurant_id": "1002",
+    "name": "Pasta Street",
+    "location_city": "Delhi",
+    "cuisines": [
+      "Italian"
+    ],
+    "cost_for_two": 1400,
+    "cost_bucket": "medium",
+    "rating": 4.6,
+    "additional_tags": [
+      "Cozy",
+      "Date Night"
+    ],
+    "searchable_text": "Pasta Street Delhi Italian Cozy Date Night"
+  },
+  {
+    "restaurant_id": "1003",
+    "name": "Budget Bites",
+    "location_city": "Delhi",
+    "cuisines": [
+      "Street Food"
+    ],
+    "cost_for_two": 350,
+    "cost_bucket": "low",
+    "rating": 3.8,
+    "additional_tags": [
+      "Quick Service"
+    ],
+    "searchable_text": "Budget Bites Delhi Street Food Quick Service"
+  }
+]
